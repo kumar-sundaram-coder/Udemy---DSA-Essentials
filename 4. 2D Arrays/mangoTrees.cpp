@@ -6,16 +6,29 @@ using namespace std;
 
 // maximize the minimum 1's, if the matrix is divided into 4 parts by a vetical and horizontal lines at i,j thus dividing the matrix into 4 parts.... our aim is to find the maximum 1's(mango trees) that can be found in the smallest part of these 4 parts...
 
+// Brute force solution, here we are moving the i and j from 0 to n and m respectively anddd then we are calculating the sum of 1's in all the four parts i.e., S1, S2, S3 and S4 thus the complexity are as follows:
+// Time Complexity O(N^2 * N^2) => O(N^4)
+// Space Complexity O(1) -> No extra space used
 int mangoTrees(int arr[][4], int n, int m)
 {
     int ans = 0;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n - 1; i++)
     {
         int minOnes = INT_MAX;
 
-        for (int j = 0; j < m; j++)
+        for (int j = 0; j < m - 1; j++)
         {
             int S1 = 0, S2 = 0, S3 = 0, S4 = 0;
+
+            /*
+            S1      |   S2
+                    |
+        ---------------------
+                    |
+            S3      |   S4
+
+      */
+
             // S1
             for (int row = 0; row <= i; row++)
             {
