@@ -1,4 +1,4 @@
-// Method - 1 | Using extra space for left and right product array but the time complexity is O(N)
+// Method - 1 | Using extra space for left and right product array & the time complexity is O(N)
 
 class Solution
 {
